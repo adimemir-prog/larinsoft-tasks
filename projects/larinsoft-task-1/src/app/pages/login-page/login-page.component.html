@@ -1,0 +1,82 @@
+<div style="text-align:center">
+  <div class= "flex flex-column gap-2">
+    <h2>Login Page</h2>
+    <!-- <form action="/index.html" method="get"> -->
+      <!-- <label for="fname">First name:</label> -->
+      <!-- <input type="text" id="fname" name="fname"><br><br> -->
+      <!-- <input type="text" id="fname" name=""><br><br> -->
+      <!-- <label for="lname">Last name:</label> -->
+      <!-- <input type="text" id="lname" name="lname"><br><br> -->
+      <!-- <input type="text" id="lname" name=""><br><br> -->
+      <!-- <input type="submit" value="Submit"> -->
+    <!-- </form> -->
+
+    <!-- <form action="http://www.foo.com" method="GET"> -->
+      <!-- <div> -->
+        <!-- <label for="say">What greeting do you want to say?</label> -->
+        <!-- <input name="say" id="say" value="Hi" /> -->
+      <!-- </div> -->
+      <!-- <div> -->
+        <!-- <label for="to">Who do you want to say it to?</label> -->
+        <!-- <input name="to" id="to" value="Mom" /> -->
+      <!-- </div> -->
+      <!-- <div> -->
+        <!-- <button>Send my greetings</button> -->
+      <!-- </div> -->
+    <!-- </form> -->
+
+    <!-- <form action="http://www.foo.com" method="GET"> -->
+
+      <!-- <app-input-with-left-title title="First Name" [required]="true" name="first_name" [(value)]="user.first_name"> --> 
+      <!-- </app-input-with-left-title> -->
+
+      <!-- <app-input-with-left-title title="First Name" [required]="true" name="first_name" > --> 
+      <!-- </app-input-with-left-title> -->
+
+      <app-labeled-input label="First Name" [required]="true">
+        <input type="text" pInputText id="login_page_first_name1" [(ngModel)]="user.first_name">
+        <small *ngIf="first_name_field_is_filled===false" style="margin-left: 4px; color:red">This field is mandatory.</small>
+      </app-labeled-input>
+
+      <app-labeled-input label="Last Name" [required]="true">
+        <input type="text" pInputText id="login_page_last_name1" [(ngModel)]="user.last_name">
+        <small *ngIf="last_name_field_is_filled===false" style="margin-left: 4px; color:red">This field is mandatory.</small>
+      </app-labeled-input>
+
+      <app-labeled-input label="Telephone Number" [required]="true">
+        <input type="text" pInputText id="login_page_telephone_number1" [(ngModel)]="user.telephone_number">
+        <small *ngIf="telephone_number_field_is_filled===false" style="margin-left: 4px; color:red">This field is mandatory.</small>
+        <small *ngIf="telephone_number_field_is_filled===true && user.is_telephone_number_valid===false" style="margin-left: 4px; color:red">This telephone number is invalid.</small>
+      </app-labeled-input>
+
+      <app-labeled-input label="Email" [required]="true" helpText="">
+        <input type="email" pInputText id="login_page_email1" [(ngModel)]="user.email">
+        <small *ngIf="email_field_is_filled===false" style="margin-left: 4px; color:red">This field is mandatory.</small>
+        <small *ngIf="email_field_is_filled && user.is_email_invalid" style="margin-left: 4px; color:red">This email address is invalid.</small>
+      </app-labeled-input>
+      
+
+      <!-- <app-input-with-left-title title="Last Name" [required]="true"  name="last_name"> --> 
+      <!-- </app-input-with-left-title> -->
+    
+      <!-- <app-input-with-left-title title="Tel " [required]="true" name="telephone_number"> --> 
+      <!-- </app-input-with-left-title> -->
+
+      <!-- <app-input-with-left-title title="Email " [required]="true" name="email"> --> 
+      <!-- </app-input-with-left-title> -->
+
+      <br>
+      <div>
+        <p-button type="submit"  label="Submit" (click)="onClickSubmit(); SubmitResultMessage.clicked_once=true; SubmitResultMessage.show(msg); "></p-button>
+        <app-submit-result-message #msg [result_is_successful]="user.all_is_valid"></app-submit-result-message>
+      <div>
+      
+      <!-- <p><p-button style="background-color:red" label="Go to Registry" (click)="GotoRegistryEvent()"></p-button></p> -->
+
+      <a routerLink="register-page">
+      <p><p-button label="Go to Registry" (click)="GotoRegistry()"></p-button></p>
+      </a>
+      <!-- <input type="submit" label="Submit" > -->
+    <!-- </form> -->
+  </div>
+</div>

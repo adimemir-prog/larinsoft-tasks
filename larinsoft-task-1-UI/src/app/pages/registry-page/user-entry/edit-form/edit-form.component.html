@@ -1,0 +1,14 @@
+<div (input)="regulateMsg()" *ngIf="is_visible" style="size:small">
+  <span >
+    <input type="text" [(ngModel)]="user.first_name"       placeholder="First Name">
+    <input type="text" [(ngModel)]="user.last_name"        placeholder="Last Name">
+    <input type="text" [(ngModel)]="user.telephone_number" placeholder="Tel No.">
+    <input type="text" [(ngModel)]="user.email"            placeholder="Email">
+  </span>
+  <i class="pi pi-check" style="position:relative; top:3px; font-size: 1.5rem; color: green;" (click)="onClickEditCheck()"></i>
+  <span style="color:red" *ngIf="should_display_result_msg">{{result_msg}}</span>
+  <!-- <span style="color:red" *ngIf="should_display_result_msg">{{result_msg}}</span> --> 
+  
+  <p style="color:red" *ngIf="should_display_state_msg">Edit form state is invalid.</p>
+  <!-- <span style="color:red" *ngIf="should_display_result_msg">{{result_msg}}</span> -->
+ </div>

@@ -1,0 +1,60 @@
+<div style="text-align:center">
+  <div class= "flex flex-column gap-2">
+    <h2>Login Page</h2>
+
+      <div>
+        <app-labeled-input label="First Name" [required]="true">
+          <input type="text" pInputText >
+          <small *ngIf="true" style="margin-left: 4px; color:red">This field is mandatory.</small>
+        </app-labeled-input>
+
+        <app-labeled-input label="Username" [required]="true">
+          <input type="text" pInputText id="login_page_username1" [(ngModel)]="userLoginInfo.username">
+          <small *ngIf="userLoginInfo.username_field_is_filled===false" style="margin-left: 4px; color:red">This field is mandatory.</small>
+        </app-labeled-input>
+
+        <app-labeled-input label="Password" [required]="true">
+          <input type="text" pInputText id="login_page_password1" [(ngModel)]="userLoginInfo.password">
+          <small *ngIf="userLoginInfo.password_field_is_filled===false" style="margin-left: 4px; color:red">This field is mandatory.</small>
+        </app-labeled-input>
+      </div>
+      <!-- <app-labeled-input label="Telephone Number" [required]="true"> -->
+        <!-- <input type="text" pInputText id="register_page_telephone_number1" [(ngModel)]="user.telephone_number"> -->
+        <!-- <small *ngIf="telephone_number_field_is_filled===false" style="margin-left: 4px; color:red">This field is mandatory.</small> -->
+        <!-- <small *ngIf="telephone_number_field_is_filled===true && user.is_telephone_number_valid===false" style="margin-left: 4px; color:red">This telephone number is invalid.</small> -->
+      <!-- </app-labeled-input> -->
+
+      <!-- <app-labeled-input label="Email" [required]="true" helpText=""> -->
+        <!-- <input type="email" pInputText id="register_page_email1" [(ngModel)]="user.email"> -->
+        <!-- <small *ngIf="email_field_is_filled===false" style="margin-left: 4px; color:red">This field is mandatory.</small> -->
+        <!-- <small *ngIf="email_field_is_filled && user.is_email_invalid" style="margin-left: 4px; color:red">This email address is invalid.</small> -->
+      <!-- </app-labeled-input> -->
+      
+
+      <!-- <app-input-with-left-title title="Last Name" [required]="true"  name="last_name"> --> 
+      <!-- </app-input-with-left-title> -->
+    
+      <!-- <app-input-with-left-title title="Tel " [required]="true" name="telephone_number"> --> 
+      <!-- </app-input-with-left-title> -->
+
+      <!-- <app-input-with-left-title title="Email " [required]="true" name="email"> --> 
+      <!-- </app-input-with-left-title> -->
+
+      <br>
+      <div>
+        <p-button type="submit"  label="Login" (click)="onClickLogin();"></p-button>
+        <!-- <app-submit-result-message #msg [result_is_successful]="user.all_is_valid"></app-submit-result-message> -->
+      <div>
+      
+      <!-- <p><p-button style="background-color:red" label="Go to Registry" (click)="GotoRegistryEvent()"></p-button></p> -->
+
+      <a style="position: relative; top: 8px;" routerLink="/register-page">
+        <p-button label="Go to the Register Page"></p-button>
+      </a>
+      <a routerLink="/registry-page">
+        <p><p-button label="Go to Registry"></p-button></p>
+      </a>
+      <!-- <input type="submit" label="Submit" > -->
+    <!-- </form> -->
+  </div>
+</div>

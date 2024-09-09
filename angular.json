@@ -3,34 +3,34 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "larinsoft-task-1": {
+    "larinsoft-task-1-UI": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/larinsoft-task-1",
-      "sourceRoot": "projects/larinsoft-task-1/src",
+      "root": "projects/larinsoft-task-1-UI",
+      "sourceRoot": "projects/larinsoft-task-1-UI/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/larinsoft-task-1",
-            "index": "projects/larinsoft-task-1/src/index.html",
-            "main": "projects/larinsoft-task-1/src/main.ts",
+            "outputPath": "dist/larinsoft-task-1-UI",
+            "index": "projects/larinsoft-task-1-UI/src/index.html",
+            "main": "projects/larinsoft-task-1-UI/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/larinsoft-task-1/tsconfig.app.json",
+            "tsConfig": "projects/larinsoft-task-1-UI/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/larinsoft-task-1/src/favicon.ico",
-              "projects/larinsoft-task-1/src/assets"
+              "projects/larinsoft-task-1-UI/src/favicon.ico",
+              "projects/larinsoft-task-1-UI/src/assets"
             ],
             "styles": [
-              "projects/larinsoft-task-1/src/styles.scss",
+              "projects/larinsoft-task-1-UI/src/styles.scss",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
               "primeicons/primeicons.css"
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "larinsoft-task-1:build:production"
+              "browserTarget": "larinsoft-task-1-UI:build:production"
             },
             "development": {
-              "browserTarget": "larinsoft-task-1:build:development"
+              "browserTarget": "larinsoft-task-1-UI:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "larinsoft-task-1:build"
+            "browserTarget": "larinsoft-task-1-UI:build"
           }
         },
         "test": {
@@ -89,14 +89,111 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/larinsoft-task-1/tsconfig.spec.json",
+            "tsConfig": "projects/larinsoft-task-1-UI/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/larinsoft-task-1/src/favicon.ico",
-              "projects/larinsoft-task-1/src/assets"
+              "projects/larinsoft-task-1-UI/src/favicon.ico",
+              "projects/larinsoft-task-1-UI/src/assets"
             ],
             "styles": [
-              "projects/larinsoft-task-1/src/styles.scss"
+              "projects/larinsoft-task-1-UI/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "larinsoft-task-1-WebAPI": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/larinsoft-task-1-web-api",
+      "sourceRoot": "projects/larinsoft-task-1-web-api/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/larinsoft-task-1-web-api",
+            "index": "projects/larinsoft-task-1-web-api/src/index.html",
+            "main": "projects/larinsoft-task-1-web-api/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/larinsoft-task-1-web-api/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/larinsoft-task-1-web-api/src/favicon.ico",
+              "projects/larinsoft-task-1-web-api/src/assets"
+            ],
+            "styles": [
+              "projects/larinsoft-task-1-web-api/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "larinsoft-task-1-WebAPI:build:production"
+            },
+            "development": {
+              "browserTarget": "larinsoft-task-1-WebAPI:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "larinsoft-task-1-WebAPI:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/larinsoft-task-1-web-api/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/larinsoft-task-1-web-api/src/favicon.ico",
+              "projects/larinsoft-task-1-web-api/src/assets"
+            ],
+            "styles": [
+              "projects/larinsoft-task-1-web-api/src/styles.scss"
             ],
             "scripts": []
           }

@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\larinsoft-task-1-web-api.props" />
-</Project>

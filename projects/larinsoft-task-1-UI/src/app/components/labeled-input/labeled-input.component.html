@@ -1,0 +1,8 @@
+<div class="flex flex-column">
+  <label class="fw-bold" style="margin-left: 4px">
+    {{ label }}
+    <span *ngIf="required" class="text-danger"></span>
+  </label>
+  <ng-content></ng-content>
+  <small style="margin-left: 4px">{{ helpText }}</small>
+</div>
